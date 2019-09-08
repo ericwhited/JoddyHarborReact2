@@ -6,26 +6,41 @@ import InfoCard from "./Components/InfoCard";
 
 class App extends Component {
   state = {
-    showInfoCard: false
+    showInfoCard: false,
+    characterCardSelected: "hello"
   };
 
-  showInfoCardHandler = () => {
-    this.setState({ showInfoCard: true });
+  showInfoCardHandler = (event, name) => {
+    this.setState({
+      showInfoCard: true,
+      characterCardSelected: name
+    });
+    console.log("showInfoCardHandler Worked!");
+    console.log(this.state.characterCardSelected);
   };
 
   hideInfoCardHandler = () => {
     this.setState({ showInfoCard: false });
   };
 
-  // TO DO
-  // TO DO
-  // TO DO
-  //  Pass the hideInfoCardHandler function to the X button in
-  //  the InfoCard component. Use if statement? Ternary may not
-  //  allow props to be passed.
+  showJobNameHandler = () => {
+    // find the job
+    console.log("showJobNameHandler Worked!");
+  };
 
   render() {
-    let InfoCard = null;
+    let infocard = null;
+
+    if (this.state.showInfoCard) {
+      infocard = (
+        <div>
+          <InfoCard
+            jobName={this.state.characterCardSelected}
+            hideInfoCard={this.hideInfoCardHandler}
+          />
+        </div>
+      );
+    }
 
     return (
       <div className="App" style={{ overflow: "hidden", height: "98vh" }}>
@@ -38,15 +53,18 @@ class App extends Component {
             height: "98vh"
           }}
         >
-          {jobs.map((job, index) => {
+          {jobs.map(job => {
             return (
               <CharacterCard
                 name={job.name}
                 key={job.name}
-                showInfoCard={this.showInfoCardHandler}
+                showInfoCard={event =>
+                  this.showInfoCardHandler(event, job.name)
+                }
               />
             );
           })}
+          {infocard}
         </div>
       </div>
     );
