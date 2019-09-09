@@ -15,6 +15,7 @@ class App extends Component {
       showInfoCard: true,
       characterCardSelected: name
     });
+    console.log(event.target);
   };
 
   hideInfoCardHandler = () => {
