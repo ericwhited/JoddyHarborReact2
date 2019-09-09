@@ -1,6 +1,6 @@
 import React from "react";
 
-const InfoCard = ({ jobName, hideInfoCard }) => {
+const InfoCard = ({ jobName, hideInfoCard, showInfoCard }) => {
   return (
     <div
       style={{
@@ -21,6 +21,8 @@ const InfoCard = ({ jobName, hideInfoCard }) => {
       <div className="closeButton" onClick={hideInfoCard}>
         X
       </div>
+      <div>Previous</div>
+      <div onClick={showInfoCard}>Next</div>
     </div>
   );
 };

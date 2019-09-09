@@ -15,8 +15,6 @@ class App extends Component {
       showInfoCard: true,
       characterCardSelected: name
     });
-    console.log("showInfoCardHandler Worked!");
-    console.log(this.state.characterCardSelected);
   };
 
   hideInfoCardHandler = () => {
@@ -37,6 +35,7 @@ class App extends Component {
           <InfoCard
             jobName={this.state.characterCardSelected}
             hideInfoCard={this.hideInfoCardHandler}
+            showInfoCard={this.showInfoCardHandler}
           />
         </div>
       );
@@ -70,5 +69,8 @@ class App extends Component {
     );
   }
 }
+
+// When clicking the next arrow on the infoCard .. fire the same event handler once u click on
+// any of the CharacterCard components. figure out how to advance it to the next character in the index
 
 export default App;
