@@ -7,7 +7,7 @@ import InfoCard from "./Components/InfoCard";
 class App extends Component {
   state = {
     showInfoCard: false,
-    characterCardSelected: "hello"
+    characterCardSelected: ""
   };
 
   showInfoCardHandler = (event, name) => {
