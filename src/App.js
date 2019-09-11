@@ -3,6 +3,7 @@ import "./App.css";
 import CharacterCard from "./Components/CharacterCard";
 import jobs from "./jobs";
 import InfoCard from "./Components/InfoCard";
+import MenuDropdown from "./Components/MenuDropdown";
 
 class App extends Component {
   state = {
@@ -53,7 +54,7 @@ class App extends Component {
             height: "98vh"
           }}
         >
-          {jobs.map(job => {
+          {/* {jobs.map(job => {
             return (
               <CharacterCard
                 name={job.name}
@@ -63,8 +64,9 @@ class App extends Component {
                 }
               />
             );
-          })}
+          })} */}
           {infocard}
+          <MenuDropdown />
         </div>
       </div>
     );
