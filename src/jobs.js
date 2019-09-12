@@ -3,7 +3,11 @@ const jobs = [
     name: "Knight"
   },
   {
-    name: "Berserker"
+    name: "Berserker",
+    subclass: "Warrior",
+    weapons: "2H Sword",
+    properties: "Physical",
+    stats: "STR, HP, Physical Damage"
   },
   {
     name: "Wizard"

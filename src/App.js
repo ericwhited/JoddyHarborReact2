@@ -10,10 +10,10 @@ class App extends Component {
     characterCardSelected: ""
   };
 
-  showInfoCardHandler = (event, jobName) => {
+  showInfoCardHandler = (event, name) => {
     this.setState({
       showInfoCard: true,
-      characterCardSelected: jobName
+      characterCardSelected: name
     });
     console.log(event.target);
   };
@@ -35,6 +35,10 @@ class App extends Component {
         <div>
           <InfoCard
             jobName={this.state.characterCardSelected}
+            // subclass={this.job.subclass}
+            // weapons={this.job.weapons}
+            // properties={this.job.properties}
+            // stats={this.job.stats}
             hideInfoCard={this.hideInfoCardHandler}
             showInfoCard={this.showInfoCardHandler}
           />
@@ -56,7 +60,7 @@ class App extends Component {
           {jobs.map(job => {
             return (
               <CharacterCard
-                jobName={job.name}
+                name={job.name}
                 key={job.name}
                 showInfoCard={event =>
                   this.showInfoCardHandler(event, job.name)

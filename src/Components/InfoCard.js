@@ -1,6 +1,14 @@
 import React from "react";
 
-const InfoCard = ({ jobName, hideInfoCard, showInfoCard }) => {
+const InfoCard = ({
+  jobName,
+  subclass,
+  weapons,
+  properties,
+  stats,
+  hideInfoCard,
+  showInfoCard
+}) => {
   return (
     <div
       style={{
@@ -19,6 +27,10 @@ const InfoCard = ({ jobName, hideInfoCard, showInfoCard }) => {
     >
       <p>Info Card</p>
       {jobName}
+      {subclass}
+      {weapons}
+      {properties}
+      {stats}
       <div className="closeButton" onClick={hideInfoCard}>
         X
       </div>
