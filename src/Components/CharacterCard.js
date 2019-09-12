@@ -11,8 +11,10 @@ const Styleddiv = styled.div`
   font-size: 35px;
 `;
 
-const CharacterCard = ({ name, showInfoCard }) => {
-  return <Styleddiv onClick={showInfoCard}>{name}</Styleddiv>;
+const CharacterCard = ({ jobName, showInfoCard }) => {
+  return (
+    <Styleddiv onClick={showInfoCard}>CharacterCard - {jobName}</Styleddiv>
+  );
 };
 
 export default CharacterCard;

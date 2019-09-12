@@ -17,6 +17,7 @@ const InfoCard = ({ jobName, hideInfoCard, showInfoCard }) => {
         fontSize: "50px"
       }}
     >
+      <p>Info Card</p>
       {jobName}
       <div className="closeButton" onClick={hideInfoCard}>
         X
