@@ -7,24 +7,39 @@ import InfoCard from "./Components/InfoCard";
 class App extends Component {
   state = {
     showInfoCard: false,
-    characterCardSelected: ""
+    // characterCardSelected: "",
+    currentJobInfo: [
+      { name: "" },
+      { subclass: "" },
+      { weapons: "" },
+      { properties: "" },
+      { stats: "" }
+      //   etc
+    ]
   };
 
-  showInfoCardHandler = (event, name) => {
+  showInfoCardHandler = (event, name, subclass) => {
     this.setState({
-      showInfoCard: true,
-      characterCardSelected: name
+      showInfoCard: true
     });
-    console.log(event.target);
+    console.log("ShowInfoCardHandler Fired");
   };
 
   hideInfoCardHandler = () => {
     this.setState({ showInfoCard: false });
   };
 
-  showJobNameHandler = () => {
-    // find the job
-    console.log("showJobNameHandler Worked!");
+  setJobInformationHandler = (event, name, subclass, weapons, properties) => {
+    this.setState({
+      currentJobInfo: [
+        { name: name },
+        { subclass: subclass },
+        { weapons: weapons },
+        { properties: properties }
+        // { stats: stats }
+      ]
+    });
+    console.log("SET-jobInformationHandler fired", this.state.currentJobInfo);
   };
 
   render() {
@@ -34,13 +49,13 @@ class App extends Component {
       infocard = (
         <div>
           <InfoCard
-            jobName={this.state.characterCardSelected}
-            // subclass={this.job.subclass}
+            jobName={this.state.currentJobInfo[0].name}
+            subclass={this.state.currentJobInfo[1].subclass}
             // weapons={this.job.weapons}
             // properties={this.job.properties}
             // stats={this.job.stats}
             hideInfoCard={this.hideInfoCardHandler}
-            showInfoCard={this.showInfoCardHandler}
+            showInfoCard={event => this.showInfoCardHandler(event)}
           />
         </div>
       );
@@ -62,9 +77,17 @@ class App extends Component {
               <CharacterCard
                 name={job.name}
                 key={job.name}
-                showInfoCard={event =>
-                  this.showInfoCardHandler(event, job.name)
-                }
+                showInfoCard={event => this.showInfoCardHandler(event)}
+                setJobInformation={event => {
+                  this.setJobInformationHandler(
+                    event,
+                    job.name,
+                    job.subclass,
+                    job.weapons,
+                    job.properties,
+                    job.stats
+                  );
+                }}
               />
             );
           })}
