@@ -6,7 +6,7 @@ const style = {
   border: "10px solid blue",
   top: "10vh",
   height: "500px",
-  width: "500px",
+  width: "800px",
   background: "lightGray",
   left: "0",
   right: "0",
@@ -21,7 +21,8 @@ const InfoCard = ({
   properties,
   stats,
   hideInfoCard,
-  showInfoCard
+  showInfoCard,
+  setJobInformation
 }) => {
   return (
     <div style={style}>
@@ -31,7 +32,7 @@ const InfoCard = ({
         X
       </div>
       <div>Previous</div>
-      <div onClick={showInfoCard}>Next</div>
+      <div onClick={setJobInformation}>Next</div>
     </div>
   );
 };

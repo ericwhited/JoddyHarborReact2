@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import CharacterCard from "./Components/CharacterCard";
-import jobs from "./jobs";
 import InfoCard from "./Components/InfoCard";
+import CharacterList from "./Containers/CharacterList";
 
 class App extends Component {
   state = {
@@ -29,18 +28,26 @@ class App extends Component {
     this.setState({ showInfoCard: false });
   };
 
-  setJobInformationHandler = (event, name, subclass, weapons, properties) => {
-    this.setState({
-      currentJobInfo: [
-        { name: name },
-        { subclass: subclass },
-        { weapons: weapons },
-        { properties: properties }
-        // { stats: stats }
-      ]
-    });
-    console.log("SET-jobInformationHandler fired", this.state.currentJobInfo);
-  };
+  // setJobInformationHandler = (
+  //   event,
+  //   name,
+  //   subclass,
+  //   weapons,
+  //   properties,
+  //   stats
+  // ) => {
+  //   this.setState({
+  //     currentJobInfo: [
+  //       { name: name },
+  //       { subclass: subclass },
+  //       { weapons: weapons },
+  //       { properties: properties },
+  //       { stats: stats }
+  //     ]
+  //   });
+  //   // console.log("SET-jobInformationHandler fired", this.state.currentJobInfo);
+  //   // console.log("this is the event" + " " + event);
+  // };
 
   render() {
     let infocard = null;
@@ -51,9 +58,10 @@ class App extends Component {
           <InfoCard
             jobName={this.state.currentJobInfo[0].name}
             subclass={this.state.currentJobInfo[1].subclass}
-            // weapons={this.job.weapons}
-            // properties={this.job.properties}
-            // stats={this.job.stats}
+            weapons={this.state.currentJobInfo[2].weapons}
+            properties={this.state.currentJobInfo[3].properties}
+            stats={this.state.currentJobInfo[4].stats}
+            setJobInformation={event => this.setJobInformationHandler(event)}
             hideInfoCard={this.hideInfoCardHandler}
             showInfoCard={event => this.showInfoCardHandler(event)}
           />
@@ -72,6 +80,7 @@ class App extends Component {
             height: "98vh"
           }}
         >
+          {/*
           {jobs.map(job => {
             return (
               <CharacterCard
@@ -91,6 +100,11 @@ class App extends Component {
               />
             );
           })}
+        */}
+          <CharacterList
+            style={{ border: "3px solid red" }}
+            showInfoCardHandler={this.showInfoCardHandler}
+          />
           {infocard}
         </div>
       </div>
