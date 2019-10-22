@@ -71,42 +71,11 @@ class App extends Component {
 
     return (
       <div className="App" style={{ overflow: "hidden", height: "98vh" }}>
-        <div
-          className="character-cards-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            height: "98vh"
-          }}
-        >
-          {/*
-          {jobs.map(job => {
-            return (
-              <CharacterCard
-                name={job.name}
-                key={job.name}
-                showInfoCard={event => this.showInfoCardHandler(event)}
-                setJobInformation={event => {
-                  this.setJobInformationHandler(
-                    event,
-                    job.name,
-                    job.subclass,
-                    job.weapons,
-                    job.properties,
-                    job.stats
-                  );
-                }}
-              />
-            );
-          })}
-        */}
-          <CharacterList
-            style={{ border: "3px solid red" }}
-            showInfoCardHandler={this.showInfoCardHandler}
-          />
-          {infocard}
-        </div>
+        <CharacterList
+          style={{ border: "3px solid red" }}
+          showInfoCard={this.showInfoCardHandler}
+        />
+        {infocard}
       </div>
     );
   }

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import CharacterCard from "../Components/CharacterCard";
+import styled from "styled-components";
 import jobs from "../jobs";
+
+const StyledCharacterList = styled.div`
+  border: 4px solid red;
+`;
 
 class CharacterList extends Component {
   //   state = {
@@ -37,27 +42,49 @@ class CharacterList extends Component {
     // console.log("this is the event" + " " + event);
   };
 
-  renderCharacterCard = props => {
-    return jobs.map(job => {
-      return (
-        <CharacterCard
-          name={job.name}
-          key={job.name}
-          showInfoCard={props.showInfoCardHandler}
-          setJobInformation={event => {
-            this.setJobInformationHandler(
-              event,
-              job.name,
-              job.subclass,
-              job.weapons,
-              job.properties,
-              job.stats
-            );
-          }}
-        />
-      );
-    });
+  clicked = () => {
+    console.log("clicked the jawn");
   };
+
+  renderCharacterCard = props => {
+    console.log("[renderCharacterCardProps]");
+    console.log(props);
+
+    return (
+      <StyledCharacterList className="characterListContainer">
+        {jobs.map(job => {
+          const imagename = job.name;
+          return (
+            <CharacterCard
+              name={job.name}
+              key={job.name}
+              image={`/assets/${imagename}.png`}
+              // showInfoCard={props.showInfoCardHandler}
+              // showInfoCard={props.showInfoCardHandler}
+              onClick={this.clicked}
+              setJobInformation={event => {
+                this.setJobInformationHandler(
+                  event,
+                  job.name,
+                  job.subclass,
+                  job.weapons,
+                  job.properties,
+                  job.stats
+                );
+              }}
+            />
+          );
+        })}
+        ;
+      </StyledCharacterList>
+    );
+  };
+
+  // const thisJawn = (props) => {
+  //   <p onClick={props.clicked}>
+  //     {props.yeah}
+  //   </p>
+  // }
 
   render() {
     return this.renderCharacterCard();
