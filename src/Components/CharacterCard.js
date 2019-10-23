@@ -12,11 +12,11 @@ const Styleddiv = styled.div`
   font-size: 14px;
   background-size: cover;
 
-  ${props =>
+  /* ${props =>
     props.breserker &&
     css`
       background: green;
-    `}
+    `} */
 `;
 
 const CharacterCard = ({
