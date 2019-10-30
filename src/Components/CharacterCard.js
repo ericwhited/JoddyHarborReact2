@@ -1,12 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
-// import Berserker from "../../public/assets/Berserker.png";
-import jobs from "../jobs";
 
 // Figure out how to change the background based on props or something so that each character box has the right job photo there.
 const Styleddiv = styled.div`
-  /* background: red; */
-  /* height: 300px; */
+  background-image: url(${props => props.image});
+  height: 300px;
   width: 128px;
   height: 128px;
   border: 2px solid black;
@@ -33,6 +31,7 @@ const CharacterCard = ({
 }) => {
   return (
     <Styleddiv
+      image={image}
       onClick={event => {
         showInfoCard(index);
         setJobInformation(index, index, name);

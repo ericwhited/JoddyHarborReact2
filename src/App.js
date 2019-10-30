@@ -109,6 +109,11 @@ class App extends Component {
           {/* {infocard} */}
         </div>
         <SecondApp style={{ display: "none" }} />
+        {/* <CharacterList
+          style={{ border: "3px solid red" }}
+          showInfoCard={this.showInfoCardHandler}
+        />
+        {infocard} */}
       </div>
     );
   }
