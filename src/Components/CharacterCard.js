@@ -35,7 +35,7 @@ const CharacterCard = ({
     <Styleddiv
       onClick={event => {
         showInfoCard(index);
-        // setJobInformation(name, index);
+        setJobInformation(index, index, name);
       }}
     >
       {name} {index}
