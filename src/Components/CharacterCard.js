@@ -31,7 +31,7 @@ const CharacterCard = ({
 }) => {
   return (
     <Styleddiv
-      image={image}
+      // image={image}
       onClick={event => {
         showInfoCard(index);
         setJobInformation(index, index, name);

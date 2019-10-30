@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import CharacterCard from "../Components/CharacterCard";
-<<<<<<< HEAD
-import jobsInfo from "../jobs";
-
-import InfoCard from "../Components/InfoCard";
-=======
 import styled from "styled-components";
-import jobs from "../jobs";
->>>>>>> master
+import jobsInfo from "../jobs";
+import InfoCard from "../Components/InfoCard";
 
 const StyledCharacterList = styled.div`
   border: 4px solid red;
@@ -65,7 +60,7 @@ class CharacterList extends Component {
           id={index}
           key={job.name}
           name={job.name}
-          image={`/assets/${imagename}.png`}
+          // image={`/assets/${imagename}.png`}
           showInfoCard={index => this.showInfoCardHandler(index)}
           // showInfoCard={id => this.showInfoCardHandler(id)}
           setJobInformation={event => {
