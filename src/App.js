@@ -1,32 +1,32 @@
 import React, { Component } from "react";
 import "./App.css";
-import InfoCard from "./Components/InfoCard";
 import CharacterList from "./Containers/CharacterList";
+import SecondApp from "./Components/SecondApp";
 
 class App extends Component {
-  state = {
-    showInfoCard: false,
-    // characterCardSelected: "",
-    currentJobInfo: [
-      { name: "" },
-      { subclass: "" },
-      { weapons: "" },
-      { properties: "" },
-      { stats: "" }
-      //   etc
-    ]
-  };
+  // state = {
+  //   showInfoCard: false,
+  //   // characterCardSelected: "",
+  //   currentJobInfo: [
+  //     { name: "" },
+  //     { subclass: "" },
+  //     { weapons: "" },
+  //     { properties: "" },
+  //     { stats: "" }
+  //     //   etc
+  //   ]
+  // };
 
-  showInfoCardHandler = (event, name, subclass) => {
-    this.setState({
-      showInfoCard: true
-    });
-    console.log("ShowInfoCardHandler Fired");
-  };
+  // showInfoCardHandler = (event, name, subclass) => {
+  //   this.setState({
+  //     showInfoCard: true
+  //   });
+  //   console.log("ShowInfoCardHandler Fired");
+  // };
 
-  hideInfoCardHandler = () => {
-    this.setState({ showInfoCard: false });
-  };
+  // hideInfoCardHandler = () => {
+  //   this.setState({ showInfoCard: false });
+  // };
 
   // setJobInformationHandler = (
   //   event,
@@ -50,24 +50,24 @@ class App extends Component {
   // };
 
   render() {
-    let infocard = null;
+    // let infocard = null;
 
-    if (this.state.showInfoCard) {
-      infocard = (
-        <div>
-          <InfoCard
-            jobName={this.state.currentJobInfo[0].name}
-            subclass={this.state.currentJobInfo[1].subclass}
-            weapons={this.state.currentJobInfo[2].weapons}
-            properties={this.state.currentJobInfo[3].properties}
-            stats={this.state.currentJobInfo[4].stats}
-            setJobInformation={event => this.setJobInformationHandler(event)}
-            hideInfoCard={this.hideInfoCardHandler}
-            showInfoCard={event => this.showInfoCardHandler(event)}
-          />
-        </div>
-      );
-    }
+    // if (this.state.showInfoCard) {
+    //   infocard = (
+    //     <div>
+    //       <InfoCard
+    //         jobName={this.state.currentJobInfo[0].name}
+    //         subclass={this.state.currentJobInfo[1].subclass}
+    //         weapons={this.state.currentJobInfo[2].weapons}
+    //         properties={this.state.currentJobInfo[3].properties}
+    //         stats={this.state.currentJobInfo[4].stats}
+    //         setJobInformation={event => this.setJobInformationHandler(event)}
+    //         hideInfoCard={this.hideInfoCardHandler}
+    //         showInfoCard={event => this.showInfoCardHandler(event)}
+    //       />
+    //     </div>
+    //   );
+    // }
 
     return (
       <div className="App" style={{ overflow: "hidden", height: "98vh" }}>
@@ -78,6 +78,7 @@ class App extends Component {
             justifyContent: "center",
             flexWrap: "wrap",
             height: "98vh"
+            // display: "none"
           }}
         >
           {/*
@@ -103,10 +104,11 @@ class App extends Component {
         */}
           <CharacterList
             style={{ border: "3px solid red" }}
-            showInfoCardHandler={this.showInfoCardHandler}
+            // showInfoCardHandler={this.showInfoCardHandler}
           />
-          {infocard}
+          {/* {infocard} */}
         </div>
+        <SecondApp style={{ display: "none" }} />
       </div>
     );
   }

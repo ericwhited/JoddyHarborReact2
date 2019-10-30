@@ -1,34 +1,44 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import zerker from "../assets/zerker.png";
+// import Berserker from "../../public/assets/Berserker.png";
+import jobs from "../jobs";
 
 // Figure out how to change the background based on props or something so that each character box has the right job photo there.
 const Styleddiv = styled.div`
   /* background: red; */
-  /* background-image: url(${zerker}); */
   /* height: 300px; */
   width: 128px;
+  height: 128px;
   border: 2px solid black;
   /* transform: skew(-20deg); */
   display: inline-block;
   font-size: 14px;
-
-  ${props =>
-    props.breserker &&
-    css`
-      background: green;
-    `}
+  background-image: url(${props => props.backgroundImage});
 `;
 
-const CharacterCard = ({ name, showInfoCard, setJobInformation, event }) => {
+// make a shownext info handler in here and change ID
+// make a shownext info handler in here and change ID
+// make a shownext info handler in here and change ID
+
+const CharacterCard = ({
+  name,
+  onClick,
+  setJobInformation,
+  event,
+  backgroundImage,
+  index,
+  consolelog,
+  id,
+  showInfoCard
+}) => {
   return (
     <Styleddiv
       onClick={event => {
-        showInfoCard(event);
-        setJobInformation(name);
+        showInfoCard(index);
+        // setJobInformation(name, index);
       }}
     >
-      CharacterCard - {name}
+      {name} {index}
     </Styleddiv>
   );
 };

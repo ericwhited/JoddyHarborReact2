@@ -22,7 +22,8 @@ const InfoCard = ({
   stats,
   hideInfoCard,
   showInfoCard,
-  setJobInformation
+  setJobInformation,
+  nextJob
 }) => {
   return (
     <div style={style}>
@@ -32,7 +33,7 @@ const InfoCard = ({
         X
       </div>
       <div>Previous</div>
-      <div onClick={setJobInformation}>Next</div>
+      <div onClick={nextJob}>Next</div>
     </div>
   );
 };
