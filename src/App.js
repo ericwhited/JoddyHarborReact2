@@ -71,6 +71,7 @@ class App extends Component {
 
     return (
       <div className="App" style={{ overflow: "hidden", height: "98vh" }}>
+<<<<<<< HEAD
         <div
           className="character-cards-container"
           style={{
@@ -109,6 +110,13 @@ class App extends Component {
           {/* {infocard} */}
         </div>
         <SecondApp style={{ display: "none" }} />
+=======
+        <CharacterList
+          style={{ border: "3px solid red" }}
+          showInfoCard={this.showInfoCardHandler}
+        />
+        {infocard}
+>>>>>>> f4743f33bae58a2576af440f2133340dfef07751
       </div>
     );
   }

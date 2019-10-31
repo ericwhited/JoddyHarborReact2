@@ -4,6 +4,10 @@ import jobsInfo from "../jobs";
 
 import InfoCard from "../Components/InfoCard";
 
+const StyledCharacterList = styled.div`
+  border: 4px solid red;
+`;
+
 class CharacterList extends Component {
   state = {
     showInfoCard: false,
@@ -66,6 +70,12 @@ class CharacterList extends Component {
       );
     });
   };
+
+  // const thisJawn = (props) => {
+  //   <p onClick={props.clicked}>
+  //     {props.yeah}
+  //   </p>
+  // }
 
   render() {
     let infocard = null;
