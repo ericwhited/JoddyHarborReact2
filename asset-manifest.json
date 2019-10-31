@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//ericwhited.github.io/JoddyHarborReact2/static/css/main.2cce8147.chunk.css",
+    "main.js": "//ericwhited.github.io/JoddyHarborReact2/static/js/main.010b2dc5.chunk.js",
+    "main.js.map": "//ericwhited.github.io/JoddyHarborReact2/static/js/main.010b2dc5.chunk.js.map",
+    "runtime~main.js": "//ericwhited.github.io/JoddyHarborReact2/static/js/runtime~main.d3e22fdc.js",
+    "runtime~main.js.map": "//ericwhited.github.io/JoddyHarborReact2/static/js/runtime~main.d3e22fdc.js.map",
+    "static/js/2.5887e6a5.chunk.js": "//ericwhited.github.io/JoddyHarborReact2/static/js/2.5887e6a5.chunk.js",
+    "static/js/2.5887e6a5.chunk.js.map": "//ericwhited.github.io/JoddyHarborReact2/static/js/2.5887e6a5.chunk.js.map",
+    "index.html": "//ericwhited.github.io/JoddyHarborReact2/index.html",
+    "precache-manifest.6d653853235ab48208dfb9aff210efda.js": "//ericwhited.github.io/JoddyHarborReact2/precache-manifest.6d653853235ab48208dfb9aff210efda.js",
+    "service-worker.js": "//ericwhited.github.io/JoddyHarborReact2/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "//ericwhited.github.io/JoddyHarborReact2/static/css/main.2cce8147.chunk.css.map"
+  }
+}
