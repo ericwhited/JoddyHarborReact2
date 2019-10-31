@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CharacterCard from "../Components/CharacterCard";
-import styled from "styled-components";
+// import styled from "styled-components";
 import jobsInfo from "../jobs";
 import InfoCard from "../Components/InfoCard";
 
@@ -83,7 +83,6 @@ class CharacterList extends Component {
     let infocard = null;
 
     if (this.state.showInfoCard) {
-      const [name, subclass, weapons, properties, stats] = this.state.jobs;
       const currentJobId = this.state.currentJobId;
       infocard = (
         <div>
@@ -98,6 +97,10 @@ class CharacterList extends Component {
             showInfoCard={event => this.showInfoCardHandler(event)}
             nextJob={this.nextJobHandler}
             prevJob={this.prevJobHandler}
+            jobimage={`/assets/${this.state.jobs[currentJobId].name.replace(
+              /\s+/g,
+              ""
+            )}.png`}
           />
         </div>
       );

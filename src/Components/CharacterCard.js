@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 // Figure out how to change the background based on props or something so that each character box has the right job photo there.
 const Styleddiv = styled.div`

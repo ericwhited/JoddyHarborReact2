@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CharacterList from "./Containers/CharacterList";
-import SecondApp from "./Components/SecondApp";
+import Logo from "./Components/Logo";
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           backgroundPosition: "bottom"
         }}
       >
-        <img src="/assets/logo.png" style={{ margin: "1.5rem 0" }} />
+        <Logo size="big" />
         <CharacterList />
       </div>
     );
