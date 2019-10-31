@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import CharacterCard from "../Components/CharacterCard";
+import styled from "styled-components";
 import jobsInfo from "../jobs";
-
 import InfoCard from "../Components/InfoCard";
-
-const StyledCharacterList = styled.div`
-  border: 4px solid red;
-`;
 
 class CharacterList extends Component {
   state = {
@@ -51,6 +47,17 @@ class CharacterList extends Component {
     console.log(this.state.currentJobId);
   };
 
+  prevJobHandler = () => {
+    if (this.state.currentJobId < 1) {
+      // set it to the last index / id thing
+    } else {
+      this.setState({
+        currentJobId: this.state.currentJobId - 1
+      });
+      console.log(this.state.currentJobId);
+    }
+  };
+
   renderCharacterCard = props => {
     const jobs = this.state.jobs;
 
@@ -60,7 +67,8 @@ class CharacterList extends Component {
           id={index}
           key={job.name}
           name={job.name}
-          backgroundImage={job.name}
+          image={`/assets/minis/${job.name.replace(/\s+/g, "")}.png`}
+          // image={`/assets/star_1.png`}
           showInfoCard={index => this.showInfoCardHandler(index)}
           // showInfoCard={id => this.showInfoCardHandler(id)}
           setJobInformation={event => {
@@ -70,12 +78,6 @@ class CharacterList extends Component {
       );
     });
   };
-
-  // const thisJawn = (props) => {
-  //   <p onClick={props.clicked}>
-  //     {props.yeah}
-  //   </p>
-  // }
 
   render() {
     let infocard = null;
@@ -95,6 +97,7 @@ class CharacterList extends Component {
             hideInfoCard={this.hideInfoCardHandler}
             showInfoCard={event => this.showInfoCardHandler(event)}
             nextJob={this.nextJobHandler}
+            prevJob={this.prevJobHandler}
           />
         </div>
       );

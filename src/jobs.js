@@ -47,7 +47,7 @@ const jobs = [
     stats: "LUK, Movement Speed, Evasion"
   },
   {
-    name: "Runeblade",
+    name: "Runeblader",
     weapons: "2H Blade",
     properties: "Fire, Frost, Lightning",
     stats: "STR, INT"
