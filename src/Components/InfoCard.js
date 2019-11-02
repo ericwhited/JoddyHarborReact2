@@ -40,15 +40,13 @@ const InfoCard = ({
   setJobInformation,
   nextJob,
   prevJob,
-  jobimage
+  jobimage,
+  videoSource
 }) => {
   return (
     <div style={style}>
       <Logo size="small" />
-      <Video
-        source={`../assets/jobVideos/${jobName}.mp4#t=9`}
-        style={{ fontSize: "50px" }}
-      />
+      <Video source={videoSource} style={{ fontSize: "50px" }} />
       <H1>{jobName}</H1>
       <StatTable />
       {jobName}, {subclass}, {weapons}, {properties}, {stats}

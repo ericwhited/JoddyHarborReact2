@@ -26,7 +26,7 @@ const VideoBackground = styled.div`
 const Video = ({ source }) => (
   <div>
     <VideoBackground className="VideoBackground">
-      <video muted autoPlay controls replay="true">
+      <video key={source} muted autoPlay controls replay="true">
         <source src={source} />
       </video>
     </VideoBackground>

@@ -85,6 +85,7 @@ class CharacterList extends Component {
     if (this.state.showInfoCard) {
       const currentJobId = this.state.currentJobId;
       infocard = (
+        // destructure some of this stuff
         <div>
           <InfoCard
             jobName={this.state.jobs[currentJobId].name}
@@ -97,6 +98,7 @@ class CharacterList extends Component {
             showInfoCard={event => this.showInfoCardHandler(event)}
             nextJob={this.nextJobHandler}
             prevJob={this.prevJobHandler}
+            videoSource={`../assets/jobVideos/${this.state.jobs[currentJobId].name}.mp4#t=9`}
             jobimage={`/assets/${this.state.jobs[currentJobId].name.replace(
               /\s+/g,
               ""
