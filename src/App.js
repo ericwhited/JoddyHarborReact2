@@ -9,7 +9,7 @@ class App extends Component {
       <div
         className="App"
         style={{
-          overflow: "hidden",
+          // overflow: "hidden",
           height: "100vh",
           backgroundImage: "url('/assets/background.jpg')",
           backgroundSize: "cover",

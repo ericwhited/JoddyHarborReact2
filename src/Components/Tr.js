@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledTr = styled.div`
   display: table-row;
+  /* display: flex; */
   /* border: 2px solid green; */
   /* border-collapse: collapse; */
 `;

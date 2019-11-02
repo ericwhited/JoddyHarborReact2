@@ -3,7 +3,7 @@ import StatTable from "../Components/StatTable";
 import styled from "styled-components";
 import H1 from "../Components/H1";
 import Logo from "../Components/Logo";
-
+import Video from "../Components/Video/Video";
 // TO DO - convert this to styled-component
 const style = {
   position: "absolute",
@@ -17,7 +17,8 @@ const style = {
   right: "0",
   margin: "0",
   padding: "0 2rem",
-  overflow: "hidden"
+  overflow: "hidden",
+  color: "white"
   // fontSize: "50px"
 };
 
@@ -44,6 +45,10 @@ const InfoCard = ({
   return (
     <div style={style}>
       <Logo size="small" />
+      <Video
+        source={`../assets/jobVideos/${jobName}.mp4#t=9`}
+        style={{ fontSize: "50px" }}
+      />
       <H1>{jobName}</H1>
       <StatTable />
       {jobName}, {subclass}, {weapons}, {properties}, {stats}
