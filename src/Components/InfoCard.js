@@ -1,5 +1,10 @@
 import React from "react";
-
+import StatTable from "../Components/StatTable";
+import styled from "styled-components";
+import H1 from "../Components/H1";
+import Logo from "../Components/Logo";
+import Video from "../Components/Video/Video";
+// TO DO - convert this to styled-component
 const style = {
   position: "absolute",
   zIndex: "10",
@@ -11,9 +16,18 @@ const style = {
   left: "0",
   right: "0",
   margin: "0",
-  padding: "0",
-  fontSize: "50px"
+  padding: "0 2rem",
+  overflow: "hidden",
+  color: "white"
+  // fontSize: "50px"
 };
+
+const StyledImg = styled.img`
+  position: relative;
+  bottom: -6rem;
+  height: 572px;
+  right: 8rem;
+`;
 
 const InfoCard = ({
   jobName,
@@ -25,17 +39,23 @@ const InfoCard = ({
   showInfoCard,
   setJobInformation,
   nextJob,
-  prevJob
+  prevJob,
+  jobimage,
+  videoSource
 }) => {
   return (
     <div style={style}>
-      <p>Info Card</p>
+      <Logo size="small" />
+      <Video source={videoSource} style={{ fontSize: "50px" }} />
+      <H1>{jobName}</H1>
+      <StatTable />
       {jobName}, {subclass}, {weapons}, {properties}, {stats}
       <div className="closeButton" onClick={hideInfoCard}>
         X
       </div>
       <div onClick={prevJob}>Previous</div>
       <div onClick={nextJob}>Next</div>
+      <StyledImg src={jobimage} alt={jobName} />
     </div>
   );
 };
