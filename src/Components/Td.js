@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledTd = styled.div`
+padding: 5px 10px;
   display: table-cell;
   height: 40px;
   border: 2px solid black;
@@ -16,12 +17,9 @@ const StyledTd = styled.div`
       ? "linear-gradient(180deg, #FFE200 0%, #FFB800 100%)"
       : "rgba(255, 255, 255, 0.75);"};
   text-align: ${props => (props.heading ? "center;" : "left;")};
-  padding-left: ${props => (props.heading ? "0" : "10px")}
+  padding-left: ${props => (props.heading ? "0" : "10px")};
+  font-weight: ${props => (props.heading ? "bold" : "0")};
 `;
-
-const headingStyles = {
-  textAlign: "ClientRect"
-};
 
 const Td = ({ heading, children }) => (
   <StyledTd heading={heading}>{children}</StyledTd>

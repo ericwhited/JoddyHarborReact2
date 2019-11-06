@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 let style = null;
 
@@ -15,7 +14,14 @@ const Logo = props => {
     style = {
       margin: "1.5rem 0"
     };
-  return <img style={style} src="../assets/logo.png" alt="logo" />;
+  return (
+    <img
+      onClick={props.close}
+      style={style}
+      src="../assets/logo.png"
+      alt="logo"
+    />
+  );
 };
 
 // const Logo = props => <img style={style} src="../assets/logo.png" />;

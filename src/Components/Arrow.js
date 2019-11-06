@@ -1,19 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-
 const StyledArrow = styled.div`
-  height: 50px;
-  width: 150px;
-  border: 2px solid black;
-  background: lightgray;
-  position: absolute;
-  top: 50%;
-  right: 0;
+  border: 2px solid white;
+  padding: 10px;
+  position: relative;
   font-size: 25px;
+  ${props => (props.right ? "transform: rotate(180deg);" : null)}
 `;
 
-const Arrow = props => {
-  return <StyledArrow>{props.next}</StyledArrow>;
+const Arrow = (right, nextJob, prevJob, next) => {
+  return (
+    <StyledArrow onClick={right ? nextJob : prevJob} right={right}>
+      <img src="../assets/arrow.png" alt="arrow" />
+      {next}
+    </StyledArrow>
+  );
 };
 
 export default Arrow;

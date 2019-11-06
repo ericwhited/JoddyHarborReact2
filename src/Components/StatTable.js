@@ -2,22 +2,37 @@ import React from "react";
 import Table from "../Components/Table";
 import Tr from "../Components/Tr";
 import Td from "../Components/Td";
+import Arrow from "../Components/Arrow";
 
-const StatTable = props => (
-  <Table>
-    <Tr>
-      <Td heading>Heading 1</Td>
-      <Td>Text 1</Td>
-    </Tr>
-    <Tr>
-      <Td heading>Heading 2</Td>
-      <Td>Text 2</Td>
-    </Tr>
-    <Tr>
-      <Td heading>Heading 3</Td>
-      <Td>Text 3</Td>
-    </Tr>
-  </Table>
+const fragmentStyles = {
+  display: "flex",
+  alignItems: "center"
+};
+
+const buttonClicker = () => {
+  console.log("ButtonClicker Worked");
+  
+} 
+
+const StatTable = ({ weapons, properties, stats, nextJob, prevJob }) => (
+  <x style={fragmentStyles}>
+    <Arrow nextJob={nextJob} />
+    <Table>
+      <Tr>
+        <Td heading>Weapon(s) Used</Td>
+        <Td>{weapons}</Td>
+      </Tr>
+      <Tr>
+        <Td heading>Properties</Td>
+        <Td>{properties}</Td>
+      </Tr>
+      <Tr>
+        <Td heading>Major Stats</Td>
+        <Td>{stats}</Td>
+      </Tr>
+    </Table>
+    <Arrow right nextJob={nextJob} />
+  </x>
 );
 
 export default StatTable;

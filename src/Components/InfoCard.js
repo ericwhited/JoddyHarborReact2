@@ -4,6 +4,7 @@ import styled from "styled-components";
 import H1 from "../Components/H1";
 import Logo from "../Components/Logo";
 import Video from "../Components/Video/Video";
+import Arrow from "../Components/Arrow";
 // TO DO - convert this to styled-component
 const style = {
   position: "absolute",
@@ -17,8 +18,8 @@ const style = {
   right: "0",
   margin: "0",
   padding: "0 2rem",
-  overflow: "hidden",
-  color: "white"
+  overflow: "hidden"
+  // color: "white"
   // fontSize: "50px"
 };
 
@@ -45,11 +46,16 @@ const InfoCard = ({
 }) => {
   return (
     <div style={style}>
-      <Logo size="small" />
+      <Logo size="small" close={hideInfoCard} />
       <Video source={videoSource} style={{ fontSize: "50px" }} />
       <H1>{jobName}</H1>
-      <StatTable />
-      {jobName}, {subclass}, {weapons}, {properties}, {stats}
+      <StatTable
+        weapons={weapons}
+        properties={properties}
+        stats={stats}
+        nextJob={nextJob}
+        prevJob={prevJob}
+      />
       <div className="closeButton" onClick={hideInfoCard}>
         X
       </div>
