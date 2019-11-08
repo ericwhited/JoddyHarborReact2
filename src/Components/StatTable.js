@@ -9,14 +9,9 @@ const fragmentStyles = {
   alignItems: "center"
 };
 
-const buttonClicker = () => {
-  console.log("ButtonClicker Worked");
-  
-} 
-
 const StatTable = ({ weapons, properties, stats, nextJob, prevJob }) => (
   <x style={fragmentStyles}>
-    <Arrow nextJob={nextJob} />
+    <Arrow prevJob={prevJob} />
     <Table>
       <Tr>
         <Td heading>Weapon(s) Used</Td>

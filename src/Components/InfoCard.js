@@ -4,7 +4,7 @@ import styled from "styled-components";
 import H1 from "../Components/H1";
 import Logo from "../Components/Logo";
 import Video from "../Components/Video/Video";
-import Arrow from "../Components/Arrow";
+import CloseButton from "../Components/CloseButton";
 // TO DO - convert this to styled-component
 const style = {
   position: "absolute",
@@ -25,9 +25,9 @@ const style = {
 
 const StyledImg = styled.img`
   position: relative;
-  bottom: -6rem;
-  height: 572px;
-  right: 8rem;
+  height: 600px;
+  right: 25%;
+  bottom: 30px;
 `;
 
 const InfoCard = ({
@@ -47,6 +47,7 @@ const InfoCard = ({
   return (
     <div style={style}>
       <Logo size="small" close={hideInfoCard} />
+      <CloseButton hideInfoCard={hideInfoCard} />
       <Video source={videoSource} style={{ fontSize: "50px" }} />
       <H1>{jobName}</H1>
       <StatTable
@@ -56,11 +57,6 @@ const InfoCard = ({
         nextJob={nextJob}
         prevJob={prevJob}
       />
-      <div className="closeButton" onClick={hideInfoCard}>
-        X
-      </div>
-      <div onClick={prevJob}>Previous</div>
-      <div onClick={nextJob}>Next</div>
       <StyledImg src={jobimage} alt={jobName} />
     </div>
   );

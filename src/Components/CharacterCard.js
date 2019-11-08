@@ -18,10 +18,6 @@ const Styleddiv = styled.div`
   /* background-image: url(${props => props.backgroundImage}); */
 `;
 
-// make a shownext info handler in here and change ID
-// make a shownext info handler in here and change ID
-// make a shownext info handler in here and change ID
-
 const CharacterCard = ({
   name,
   onClick,

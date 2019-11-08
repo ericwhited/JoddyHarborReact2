@@ -5,16 +5,17 @@ const StyledArrow = styled.div`
   padding: 10px;
   position: relative;
   font-size: 25px;
-  ${props => (props.right ? "transform: rotate(180deg);" : null)}
+  display: flex;
 `;
 
-const Arrow = (right, nextJob, prevJob, next) => {
-  return (
-    <StyledArrow onClick={right ? nextJob : prevJob} right={right}>
+const Arrow = ({ right, nextJob, prevJob }) =>
+  right ? (
+    <StyledArrow style={{ transform: "rotate(180deg)" }} onClick={nextJob}>
       <img src="../assets/arrow.png" alt="arrow" />
-      {next}
+    </StyledArrow>
+  ) : (
+    <StyledArrow onClick={prevJob}>
+      <img src="../assets/arrow.png" alt="arrow" />
     </StyledArrow>
   );
-};
-
 export default Arrow;
