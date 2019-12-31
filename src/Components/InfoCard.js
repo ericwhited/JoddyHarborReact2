@@ -5,6 +5,7 @@ import H1 from "../Components/H1";
 import Logo from "../Components/Logo";
 import Video from "../Components/Video/Video";
 import CloseButton from "../Components/CloseButton";
+import SkillTree from "../Components/SkillTree";
 // TO DO - convert this to styled-component
 const style = {
   position: "absolute",
@@ -30,7 +31,18 @@ const StyledImg = styled.img`
   bottom: 30px;
 `;
 
+const SkillButton = styled.div`
+  height: 40px;
+  width: 40px;
+  background: red;
+  /* z-index: 100; */
+  position: relative;
+  top: -23%;
+  left: 90%;
+`;
+
 const InfoCard = ({
+  currentJob,
   jobName,
   subclass,
   weapons,
@@ -42,22 +54,26 @@ const InfoCard = ({
   nextJob,
   prevJob,
   jobimage,
-  videoSource
+  videoSource,
+  showSkillTreeHandler
 }) => {
   return (
     <div style={style}>
       <Logo size="small" close={hideInfoCard} />
       <CloseButton hideInfoCard={hideInfoCard} />
       <Video source={videoSource} style={{ fontSize: "50px" }} />
-      <H1>{jobName}</H1>
+      <H1>{currentJob.name}</H1>
       <StatTable
-        weapons={weapons}
-        properties={properties}
-        stats={stats}
+        weapons={currentJob.weapons}
+        properties={currentJob.properties}
+        stats={currentJob.stats}
         nextJob={nextJob}
         prevJob={prevJob}
       />
-      <StyledImg src={jobimage} alt={jobName} />
+      <StyledImg src={jobimage} alt={currentJob.jobName} />
+      <SkillButton onClick={showSkillTreeHandler} />
+
+      <SkillTree currentJob={currentJob} />
     </div>
   );
 };

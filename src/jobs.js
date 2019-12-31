@@ -8,7 +8,33 @@ const jobs = [
     subclass: "Warrior",
     weapons: "2H Sword",
     properties: "Physical",
-    stats: "STR, HP, Physical Damage"
+    stats: "STR, HP, Physical Damage",
+    skills: [
+      {
+        name: "Dark Aura",
+        level_requirements: "16",
+        skill_requirements: "None",
+        type: "Passive",
+        additional_types: "Dark",
+        weapon_requirements: "None",
+        cooldown: "none",
+        skill_photo: "images/zerker/DarkAura.png",
+        description:
+          "Your latent dark power restores 10 spirit every second. Dark Aura stacks on hit, up to once per second, up to 10 times total. Each stack increases the amount restored by an additional 1 spirit."
+      },
+      {
+        name: "X Slash",
+        level_requirements: "24",
+        skill_requirements: "None",
+        type: "Active",
+        additional_types: "Close Range, Physical",
+        weapon_requirements: "Two-handed Greatsword",
+        cooldown: "none",
+        skill_photo: "images/zerker/xSlash.png",
+        description:
+          "Swing your greatsword in an X as you charge forward 4.5 m, dealing 75% damage 2 times to 5 enemies in your path. This skill can cancel other skills. You will be immune to knockback while this skill is active. Consumes 40 stamina."
+      }
+    ]
   },
   {
     name: "Wizard",

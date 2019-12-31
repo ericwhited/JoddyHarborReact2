@@ -3,25 +3,20 @@ import CharacterCard from "../Components/CharacterCard";
 // import styled from "styled-components";
 import jobsInfo from "../jobs";
 import InfoCard from "../Components/InfoCard";
+import SkillTree from "../Components/SkillTree";
 
 class CharacterList extends Component {
   state = {
     showInfoCard: false,
     currentJobId: 0,
-    jobs: jobsInfo
+    jobs: jobsInfo,
+    SkillContainerShowing: false
   };
 
   setJobInformationHandler = index => {
     this.setState({
       currentJobId: index
     });
-    console.log("this.state.currentJobId");
-    console.log(this.state.currentJobId);
-    console.log("jobInfoHnalder index");
-    console.log(index);
-
-    // console.log("SET-jobInformationHandler fired", this.state.currentJobInfo);
-    // console.log("this is the event" + " " + event);
   };
 
   showInfoCardHandler = index => {
@@ -37,6 +32,14 @@ class CharacterList extends Component {
 
   hideInfoCardHandler = () => {
     this.setState({ showInfoCard: false });
+  };
+
+  showSkillTreeHandler = () => {
+    console.log("showSkillTreeHandler FIRED");
+
+    this.setState({
+      SkillContainerShowing: !this.state.SkillContainerShowing
+    });
   };
 
   nextJobHandler = () => {
@@ -82,24 +85,28 @@ class CharacterList extends Component {
   render() {
     let infocard = null;
 
+    const jobs = this.state.jobs;
+
     if (this.state.showInfoCard) {
       const currentJobId = this.state.currentJobId;
       infocard = (
         // destructure some of this stuff
         <div>
           <InfoCard
-            jobName={this.state.jobs[currentJobId].name}
-            // subclass={this.state.currentJobInfo[1].subclass}
-            weapons={this.state.jobs[currentJobId].weapons}
-            properties={this.state.jobs[currentJobId].properties}
-            stats={this.state.jobs[currentJobId].stats}
-            setJobInformation={event => this.setJobInformationHandler(event)}
+            currentJob={jobs[currentJobId]}
+            // jobName={jobs[currentJobId].name}
+            // // subclass={currentJobInfo[1].subclass}
+            // weapons={jobs[currentJobId].weapons}
+            // properties={jobs[currentJobId].properties}
+            // stats={jobs[currentJobId].stats}
+            // setJobInformation={event => this.setJobInformationHandler(event)}
             hideInfoCard={this.hideInfoCardHandler}
             showInfoCard={event => this.showInfoCardHandler(event)}
             nextJob={this.nextJobHandler}
             prevJob={this.prevJobHandler}
-            videoSource={`../assets/jobVideos/${this.state.jobs[currentJobId].name}.mp4#t=9`}
-            jobimage={`/assets/${this.state.jobs[currentJobId].name.replace(
+            // showSkillTreeHandler={this.showSkillTreeHandler}
+            videoSource={`../assets/jobVideos/${jobs[currentJobId].name}.mp4#t=9`}
+            jobimage={`/assets/${jobs[currentJobId].name.replace(
               /\s+/g,
               ""
             )}.png`}
@@ -108,7 +115,7 @@ class CharacterList extends Component {
       );
     }
     return (
-      <div>
+      <div className="CharListContainer">
         {this.renderCharacterCard()}
         {infocard}
       </div>
