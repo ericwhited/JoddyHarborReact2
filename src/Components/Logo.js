@@ -5,8 +5,8 @@ let style = null;
 const Logo = props => {
   if (props.size === "small") {
     style = {
-      height: "80px",
-      margin: "1rem 0 0 0",
+      height: "60px",
+      margin: "1.5rem",
       textAlign: "left",
       display: "block"
     };

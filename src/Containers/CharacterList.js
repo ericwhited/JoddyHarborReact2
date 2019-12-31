@@ -94,17 +94,10 @@ class CharacterList extends Component {
         <div>
           <InfoCard
             currentJob={jobs[currentJobId]}
-            // jobName={jobs[currentJobId].name}
-            // // subclass={currentJobInfo[1].subclass}
-            // weapons={jobs[currentJobId].weapons}
-            // properties={jobs[currentJobId].properties}
-            // stats={jobs[currentJobId].stats}
-            // setJobInformation={event => this.setJobInformationHandler(event)}
             hideInfoCard={this.hideInfoCardHandler}
             showInfoCard={event => this.showInfoCardHandler(event)}
             nextJob={this.nextJobHandler}
             prevJob={this.prevJobHandler}
-            // showSkillTreeHandler={this.showSkillTreeHandler}
             videoSource={`../assets/jobVideos/${jobs[currentJobId].name}.mp4#t=9`}
             jobimage={`/assets/${jobs[currentJobId].name.replace(
               /\s+/g,

@@ -2,14 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import jobs from "../jobs";
 import LevelRequirement from "./LevelRequirement";
+import H1 from "../Components/H1";
+import Logo from "../Components/Logo";
 
 const SkillContainer = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
-  background: blue;
+  background: #252525;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: scroll;
 `;
 
 const renderLevelRequirement = ([...levels], skills) => {
@@ -20,26 +23,16 @@ const renderLevelRequirement = ([...levels], skills) => {
 
 const SkillTree = ({ currentJob }) => {
   return (
-    <SkillContainer>
-      <h1>This is the skill tree for {currentJob.name}</h1>
-      {/* <LevelRequirement level="10">
-        {currentJob.skills.map(skill => {
-          console.log("skill");
-          console.log(skill);
-          return (
-            <div>
-              {skill.name} - {skill.level_requirements}
-            </div>
-          );
-        })}
-      </LevelRequirement> */}
-
-      {/* <LevelRequirement level="10" skills={currentJob.skills}></LevelRequirement> */}
-      {renderLevelRequirement(
-        ["10", "20", "30", "40", "50"],
-        currentJob.skills
-      )}
-    </SkillContainer>
+    <React.Fragment>
+      <SkillContainer>
+        <Logo size="small" style={{ margin: "20px;" }} />
+        <H1>{currentJob.name}</H1>
+        {renderLevelRequirement(
+          ["10", "20", "30", "40", "50"],
+          currentJob.skills
+        )}
+      </SkillContainer>
+    </React.Fragment>
   );
 };
 
