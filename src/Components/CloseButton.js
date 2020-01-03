@@ -5,9 +5,10 @@ const StyledCloseButton = styled.img`
   position: relative;
   right: -50%;
   top: -40px;
+  z-index: 10;
 `;
 
-const CloseButton = ({ hideInfoCard }) => (
+const CloseButton = ({ hideInfoCard, style }) => (
   <StyledCloseButton
     src="../assets/CloseIcon.png"
     alt=""

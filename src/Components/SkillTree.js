@@ -4,6 +4,7 @@ import jobs from "../jobs";
 import LevelRequirement from "./LevelRequirement";
 import H1 from "../Components/H1";
 import Logo from "../Components/Logo";
+import CloseButton from "./CloseButton";
 
 const SkillContainer = styled.div`
   /* height: 100vh; */
@@ -24,6 +25,7 @@ const renderLevelRequirement = ([...levels], skills) => {
 const SkillTree = ({ currentJob }) => {
   return (
     <React.Fragment>
+      <CloseButton />
       <SkillContainer>
         <Logo size="small" style={{ margin: "20px;" }} />
         <H1>{currentJob.name}</H1>

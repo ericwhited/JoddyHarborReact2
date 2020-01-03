@@ -2,29 +2,21 @@ import React, { Component } from "react";
 import "./App.css";
 import CharacterList from "./Containers/CharacterList";
 import Logo from "./Components/Logo";
+import styled from "styled-components";
 
-class App extends Component {
-  render() {
-    return (
-      <div
-        className="App"
-        style={{
-          // overflow: "hidden",
-          height: "100vh",
-          backgroundImage: "url('/assets/background.jpg')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom"
-        }}
-      >
-        <Logo size="big" />
-        <CharacterList />
-      </div>
-    );
-  }
-}
+const StyledApp = styled.div`
+  height: 100vh;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+`;
 
-// When clicking the next arrow on the infoCard .. fire the same event handler once u click on
-// any of the CharacterCard components. figure out how to advance it to the next character in the index
+const App = () => (
+  <StyledApp className="App">
+    <Logo size="big" />
+    <CharacterList />
+  </StyledApp>
+);
 
 export default App;
