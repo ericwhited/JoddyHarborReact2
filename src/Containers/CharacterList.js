@@ -22,12 +22,7 @@ class CharacterList extends Component {
   showInfoCardHandler = index => {
     this.setState({
       showInfoCard: true
-      // currentJobId: index
     });
-    console.log("ShowInfoCardHandler Fired");
-    console.log(this.state.jobs);
-    // console.log("this.state.currentJobId");
-    // console.log(this.state.currentJobId);
   };
 
   hideInfoCardHandler = () => {
@@ -43,24 +38,21 @@ class CharacterList extends Component {
   };
 
   nextJobHandler = () => {
-    // let currentJobId = this.state.currentJobId;
     this.setState({
       currentJobId: this.state.currentJobId + 1
     });
-    console.log(this.state.currentJobId);
   };
 
   prevJobHandler = () => {
     if (this.state.currentJobId < 1) {
-      // set it to the last index / id thing
     } else {
       this.setState({
         currentJobId: this.state.currentJobId - 1
       });
-      console.log(this.state.currentJobId);
     }
   };
 
+  // Renders all the jobs in the characterList
   renderCharacterCard = props => {
     const jobs = this.state.jobs;
 
@@ -71,9 +63,7 @@ class CharacterList extends Component {
           key={job.name}
           name={job.name}
           image={`/assets/minis/${job.name.replace(/\s+/g, "")}.png`}
-          // image={`/assets/star_1.png`}
           showInfoCard={index => this.showInfoCardHandler(index)}
-          // showInfoCard={id => this.showInfoCardHandler(id)}
           setJobInformation={event => {
             this.setJobInformationHandler(index);
           }}

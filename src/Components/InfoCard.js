@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import StatTable from "../Components/StatTable";
 import styled from "styled-components";
 import H1 from "../Components/H1";
@@ -10,18 +10,14 @@ import SkillTree from "../Components/SkillTree";
 const style = {
   position: "absolute",
   zIndex: "10",
-  // border: "10px solid blue",
   top: "0",
   height: "100vh",
-  // width: "70%",
   background: "lightGray",
   left: "0",
   right: "0",
   margin: "0",
   padding: "0 2rem",
   overflow: "hidden"
-  // color: "white"
-  // fontSize: "50px"
 };
 
 const StyledImg = styled.img`
@@ -33,30 +29,27 @@ const StyledImg = styled.img`
 
 const SkillButton = styled.div`
   height: 40px;
-  width: 40px;
+  width: 60px;
+  color: white;
+  font-size: 25px;
   background: red;
-  /* z-index: 100; */
   position: relative;
   top: -23%;
   left: 90%;
 `;
 
+const showSkillStree = () => {};
+
 const InfoCard = ({
   currentJob,
-  jobName,
-  subclass,
-  weapons,
-  properties,
-  stats,
   hideInfoCard,
-  showInfoCard,
-  setJobInformation,
   nextJob,
   prevJob,
   jobimage,
   videoSource,
   showSkillTreeHandler
 }) => {
+  const [skillTreeShowing, setSkillTreeShowing] = useState(false);
   return (
     <div style={style}>
       <Logo size="small" close={hideInfoCard} />
@@ -71,9 +64,11 @@ const InfoCard = ({
         prevJob={prevJob}
       />
       <StyledImg src={jobimage} alt={currentJob.jobName} />
-      <SkillButton onClick={showSkillTreeHandler} />
+      <SkillButton onClick={() => setSkillTreeShowing(true)}>
+        Skills
+      </SkillButton>
 
-      <SkillTree currentJob={currentJob} />
+      {skillTreeShowing && <SkillTree currentJob={currentJob} />}
     </div>
   );
 };

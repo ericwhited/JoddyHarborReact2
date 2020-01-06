@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// Figure out how to change the background based on props or something so that each character box has the right job photo there.
 const Styleddiv = styled.div`
   background-image: url(${props => props.image});
   background-size: contain;
@@ -10,23 +9,15 @@ const Styleddiv = styled.div`
   height: 300px;
   width: 118px;
   height: 120px;
-  /* border: 2px solid black; */
-  /* transform: skew(-20deg); */
   display: inline-block;
   font-size: 14px;
   margin: 5px 0;
-  /* background-image: url(${props => props.backgroundImage}); */
 `;
 
 const CharacterCard = ({
   name,
-  onClick,
   setJobInformation,
-  event,
-  backgroundImage,
   index,
-  consolelog,
-  id,
   showInfoCard,
   image
 }) => {
